@@ -1,10 +1,9 @@
-import java.math.BigDecimal;
-
-import bean.ExpenseType;
+import factory.ExpenseTypeRepository;
+import factory.FakeExpenseTypeRepository;
 
 public class AppStart {
 	public static void main(String[] args) {
-		System.out.println(new ExpenseType("a", BigDecimal.TEN));
-		System.out.println("Success");
+		ExpenseTypeRepository beanRepository = new FakeExpenseTypeRepository();
+		System.out.println(beanRepository.listExpenseTypes());
 	}
 }
