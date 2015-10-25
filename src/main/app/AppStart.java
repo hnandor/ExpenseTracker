@@ -1,5 +1,5 @@
-import factory.ExpenseTypeRepository;
-import factory.FakeExpenseTypeRepository;
+import repository.ExpenseTypeRepository;
+import repository.FakeExpenseTypeRepository;
 
 public class AppStart {
 	public static void main(String[] args) {
