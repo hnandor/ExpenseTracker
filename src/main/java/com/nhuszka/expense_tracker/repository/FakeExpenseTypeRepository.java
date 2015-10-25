@@ -3,12 +3,15 @@ package com.nhuszka.expense_tracker.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.nhuszka.expense_tracker.bean.ExpenseType;
 import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
 
 /**
  * Expense Types on-the-fly without DB connection.
  */
+@Repository
 public class FakeExpenseTypeRepository extends ExpenseTypeRepository {
 	
 	private static final String PREFIX = "FakeType";
