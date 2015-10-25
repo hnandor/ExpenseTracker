@@ -1,4 +1,4 @@
-package service;
+package com.nhuszka.expense_tracker.service;
 
 import org.junit.Test;
 

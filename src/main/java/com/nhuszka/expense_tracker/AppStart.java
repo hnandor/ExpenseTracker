@@ -1,5 +1,7 @@
-import repository.ExpenseTypeRepository;
-import repository.FakeExpenseTypeRepository;
+package com.nhuszka.expense_tracker;
+
+import com.nhuszka.expense_tracker.repository.ExpenseTypeRepository;
+import com.nhuszka.expense_tracker.repository.FakeExpenseTypeRepository;
 
 public class AppStart {
 	public static void main(String[] args) {

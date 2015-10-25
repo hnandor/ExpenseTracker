@@ -1,10 +1,10 @@
-package repository;
+package com.nhuszka.expense_tracker.repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.ExpenseType;
-import bean.ExpenseTypeBuilder;
+import com.nhuszka.expense_tracker.bean.ExpenseType;
+import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
 
 /**
  * Expense Types on-the-fly without DB connection.
