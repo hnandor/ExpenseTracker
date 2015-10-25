@@ -13,9 +13,9 @@ import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
  */
 @Repository
 public class FakeExpenseTypeRepository extends ExpenseTypeRepository {
-	
+
 	private static final String PREFIX = "FakeType";
-	
+
 	private enum FakeType {
 		ONE, TWO, THREE
 	}

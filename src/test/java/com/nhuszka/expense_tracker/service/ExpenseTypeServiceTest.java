@@ -16,9 +16,9 @@ import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
 import com.nhuszka.expense_tracker.repository.FakeExpenseTypeRepository;
 
 public class ExpenseTypeServiceTest {
-	
+
 	private FakeExpenseTypeRepository expenseTypeRepository;
-	
+
 	@Before
 	public void initBeforeTest() {
 		expenseTypeRepository = mock(FakeExpenseTypeRepository.class);
@@ -32,13 +32,17 @@ public class ExpenseTypeServiceTest {
 
 	@Test
 	public void test02_ExpenseTypeServiceUsesTheProperRepository() {
-		final List<ExpenseType> aList = new ArrayList();
-		aList.add(new ExpenseTypeBuilder().withType("sf").build());
-		when(expenseTypeRepository.listExpenseTypes()).thenReturn(aList);
-		
-		List<ExpenseType> listExpenseTypes = 
-				new ExpenseTypeService(expenseTypeRepository).listExpenseTypes();
+		final List<ExpenseType> aList = givenExpenseTypeRepositoryReturnsWithTypeList();
 
-		assertEquals(aList, listExpenseTypes);	
+		List<ExpenseType> listExpenseTypes = new ExpenseTypeService(expenseTypeRepository).listExpenseTypes();
+
+		assertEquals(aList, listExpenseTypes);
+	}
+
+	private List<ExpenseType> givenExpenseTypeRepositoryReturnsWithTypeList() {
+		final List<ExpenseType> aList = new ArrayList<ExpenseType>();
+		aList.add(new ExpenseTypeBuilder().withType("testType").build());
+		when(expenseTypeRepository.listExpenseTypes()).thenReturn(aList);
+		return aList;
 	}
 }
