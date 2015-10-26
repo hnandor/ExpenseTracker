@@ -2,6 +2,7 @@ package com.nhuszka.expense_tracker.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,20 +16,27 @@ import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
 public class FakeExpenseTypeRepository implements ExpenseTypeRepository {
 
 	private static final String PREFIX = "FakeType";
+	private static List<ExpenseType> expenseTypes;
 
-	private enum FakeType {
+	enum FakeType {
 		ONE, TWO, THREE
 	}
 
-	private ExpenseType createExpenseType(final FakeType fakeType) {
-		return new ExpenseTypeBuilder().withType(PREFIX + fakeType.name()).build();
+	public List<ExpenseType> listExpenseType() {
+		return Optional.ofNullable(expenseTypes).orElse(createExpenseTypes());
 	}
 
-	public List<ExpenseType> listExpenseType() {
-		List<ExpenseType> fakeTypes = new ArrayList<ExpenseType>();
+	private List<ExpenseType> createExpenseTypes() {
+		expenseTypes = new ArrayList<ExpenseType>();
 		for (FakeType type : FakeType.values()) {
-			fakeTypes.add(createExpenseType(type));
+			expenseTypes.add(createExpenseType(type));
 		}
-		return fakeTypes;
+		return expenseTypes;
+	}
+
+	private ExpenseType createExpenseType(final FakeType fakeType) {
+		return new ExpenseTypeBuilder()
+				.withType(PREFIX + fakeType.name())
+				.build();
 	}
 }
