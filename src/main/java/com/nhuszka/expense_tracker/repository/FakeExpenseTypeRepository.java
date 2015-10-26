@@ -1,6 +1,7 @@
 package com.nhuszka.expense_tracker.repository;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,9 +29,9 @@ public class FakeExpenseTypeRepository implements ExpenseTypeRepository {
 
 	private List<ExpenseType> createExpenseTypes() {
 		expenseTypes = new ArrayList<ExpenseType>();
-		for (FakeType type : FakeType.values()) {
+		Arrays.asList(FakeType.values()).forEach((type) -> {
 			expenseTypes.add(createExpenseType(type));
-		}
+		});
 		return expenseTypes;
 	}
 

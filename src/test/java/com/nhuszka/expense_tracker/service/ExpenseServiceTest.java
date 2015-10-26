@@ -18,6 +18,7 @@ import com.nhuszka.expense_tracker.bean.ExpenseType;
 import com.nhuszka.expense_tracker.repository.FakeExpenseRepository;
 
 public class ExpenseServiceTest {
+
 	private FakeExpenseRepository expenseRepository;
 
 	@Before

@@ -29,9 +29,9 @@ public class FakeExpenseRepository implements ExpenseRepository {
 
 	private List<Expense> createFakeExpenses() {
 		expenses = new ArrayList<Expense>();
-		for (ExpenseType type : expenseTypeRepository.listExpenseType()) {
+		expenseTypeRepository.listExpenseType().forEach((type) -> {
 			expenses.add(buildFakeExpense(type));
-		}
+		});
 		return expenses;
 	}
 
