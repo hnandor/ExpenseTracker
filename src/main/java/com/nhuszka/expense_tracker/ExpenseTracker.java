@@ -18,6 +18,6 @@ public class ExpenseTracker {
 	}
 
 	public void start() {
-		System.out.println("SUCCESS: " + expenseTypeService.listExpenseTypes());
+		System.out.println("SUCCESS: " + expenseTypeService.listExpenseType());
 	}
 }

@@ -1,14 +1,18 @@
 package com.nhuszka.expense_tracker.bean;
 
 public class ExpenseType {
-	private final String type;
+	private final String name;
 
-	public ExpenseType(String type) {
-		this.type = type;
+	public ExpenseType(String name) {
+		this.name = name;
+	}
+	
+	public String getName() {
+		return name;
 	}
 
 	@Override
 	public String toString() {
-		return type;
+		return "ExpenseType: " + name;
 	}
 }

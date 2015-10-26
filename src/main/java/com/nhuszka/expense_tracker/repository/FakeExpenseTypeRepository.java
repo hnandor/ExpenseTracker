@@ -12,7 +12,7 @@ import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
  * Expense Types on-the-fly without DB connection.
  */
 @Repository
-public class FakeExpenseTypeRepository extends ExpenseTypeRepository {
+public class FakeExpenseTypeRepository implements ExpenseTypeRepository {
 
 	private static final String PREFIX = "FakeType";
 
@@ -21,13 +21,10 @@ public class FakeExpenseTypeRepository extends ExpenseTypeRepository {
 	}
 
 	private ExpenseType createExpenseType(final FakeType fakeType) {
-		return new ExpenseTypeBuilder()
-				.withType(PREFIX + fakeType.name())
-				.build();
+		return new ExpenseTypeBuilder().withType(PREFIX + fakeType.name()).build();
 	}
 
-	@Override
-	public List<ExpenseType> listExpenseTypes() {
+	public List<ExpenseType> listExpenseType() {
 		List<ExpenseType> fakeTypes = new ArrayList<ExpenseType>();
 		for (FakeType type : FakeType.values()) {
 			fakeTypes.add(createExpenseType(type));

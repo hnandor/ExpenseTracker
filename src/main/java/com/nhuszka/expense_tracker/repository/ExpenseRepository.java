@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.nhuszka.expense_tracker.bean.ExpenseType;
+import com.nhuszka.expense_tracker.bean.Expense;
 
 @Repository
-public interface ExpenseTypeRepository {
+public interface ExpenseRepository {
 
-	List<ExpenseType> listExpenseType();
+	List<Expense> listExpense();
 }
