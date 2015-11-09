@@ -21,4 +21,8 @@ public class ExpenseService {
 	public List<Expense> listExpense() {
 		return expenseRepository.listExpense();
 	}
+	
+	public Expense addExpense(Expense expense) {
+		return expenseRepository.addExpense(expense);
+	}
 }

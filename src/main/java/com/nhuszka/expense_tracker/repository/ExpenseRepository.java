@@ -10,4 +10,6 @@ import com.nhuszka.expense_tracker.bean.Expense;
 public interface ExpenseRepository {
 
 	List<Expense> listExpense();
+	
+	Expense addExpense(Expense expense);
 }
