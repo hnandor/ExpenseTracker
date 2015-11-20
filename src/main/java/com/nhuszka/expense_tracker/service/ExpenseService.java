@@ -7,22 +7,18 @@ import org.springframework.stereotype.Service;
 
 import com.nhuszka.expense_tracker.bean.Expense;
 import com.nhuszka.expense_tracker.repository.ExpenseRepository;
-import com.nhuszka.expense_tracker.repository.FakeExpenseRepository;
 
 @Service
-public class ExpenseService {
+class ExpenseService<R extends ExpenseRepository> {
+
 	private final ExpenseRepository expenseRepository;
 
 	@Autowired
-	public ExpenseService(FakeExpenseRepository expenseRepository) {
+	ExpenseService(R expenseRepository) {
 		this.expenseRepository = expenseRepository;
 	}
 
-	public List<Expense> listExpense() {
+	List<Expense> listExpense() {
 		return expenseRepository.listExpense();
-	}
-	
-	public Expense addExpense(Expense expense) {
-		return expenseRepository.addExpense(expense);
 	}
 }

@@ -26,12 +26,12 @@ public class ExpenseTypeServiceTest {
 
 	@Test
 	public void test01_ExpenseTypeServiceIsSuccessfullyMocked() {
-		ExpenseTypeService service = getExpenseTypeService();
+		ExpenseTypeService<FakeExpenseTypeRepository> service = getExpenseTypeService();
 		assertNotNull(service);
 	}
 
-	private ExpenseTypeService getExpenseTypeService() {
-		return new ExpenseTypeService(expenseTypeRepository);
+	private ExpenseTypeService<FakeExpenseTypeRepository> getExpenseTypeService() {
+		return new ExpenseTypeService<FakeExpenseTypeRepository>(expenseTypeRepository);
 	}
 
 	@Test

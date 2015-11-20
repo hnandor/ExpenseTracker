@@ -7,19 +7,18 @@ import org.springframework.stereotype.Service;
 
 import com.nhuszka.expense_tracker.bean.ExpenseType;
 import com.nhuszka.expense_tracker.repository.ExpenseTypeRepository;
-import com.nhuszka.expense_tracker.repository.FakeExpenseTypeRepository;
 
 @Service
-public class ExpenseTypeService {
+class ExpenseTypeService<R extends ExpenseTypeRepository> {
 
 	private final ExpenseTypeRepository expenseTypeRepository;
 
 	@Autowired
-	public ExpenseTypeService(FakeExpenseTypeRepository expenseTypeRepository) {
+	ExpenseTypeService(R expenseTypeRepository) {
 		this.expenseTypeRepository = expenseTypeRepository;
 	}
 
-	public List<ExpenseType> listExpenseType() {
+	List<ExpenseType> listExpenseType() {
 		return expenseTypeRepository.listExpenseType();
 	}
 }

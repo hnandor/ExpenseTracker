@@ -8,6 +8,7 @@ public class ExpenseTrackerStarter {
 	private static final String APP_CONFIG_FILE_PATH = "spring/application-config.xml";
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		ApplicationContext context = new ClassPathXmlApplicationContext(APP_CONFIG_FILE_PATH);
 
 		ExpenseTracker expenseTracker = (ExpenseTracker) context.getBean(ExpenseTracker.EXPENSE_TRACKER_ID);
