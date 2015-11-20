@@ -1,4 +1,4 @@
-package com.nhuszka.expense_tracker.repository;
+package com.nhuszka.expense_tracker.backend.repository;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -8,9 +8,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.nhuszka.expense_tracker.bean.Expense;
-import com.nhuszka.expense_tracker.bean.ExpenseBuilder;
-import com.nhuszka.expense_tracker.bean.ExpenseType;
+import com.nhuszka.expense_tracker.backend.bean.Expense;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseBuilder;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseType;
 
 /**
  * Expenses on-the-fly without DB connection.

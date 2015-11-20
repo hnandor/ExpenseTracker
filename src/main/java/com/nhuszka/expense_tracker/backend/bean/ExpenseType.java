@@ -1,4 +1,4 @@
-package com.nhuszka.expense_tracker.bean;
+package com.nhuszka.expense_tracker.backend.bean;
 
 public class ExpenseType {
 	private final String name;

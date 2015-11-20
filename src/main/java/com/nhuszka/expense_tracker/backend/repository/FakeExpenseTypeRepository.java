@@ -1,4 +1,4 @@
-package com.nhuszka.expense_tracker.repository;
+package com.nhuszka.expense_tracker.backend.repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,8 +7,8 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
-import com.nhuszka.expense_tracker.bean.ExpenseType;
-import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseType;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseTypeBuilder;
 
 /**
  * Expense Types on-the-fly without DB connection.

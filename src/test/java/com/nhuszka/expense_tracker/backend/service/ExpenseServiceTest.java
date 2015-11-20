@@ -1,4 +1,4 @@
-package com.nhuszka.expense_tracker.service;
+package com.nhuszka.expense_tracker.backend.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
@@ -11,10 +11,11 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.nhuszka.expense_tracker.bean.Expense;
-import com.nhuszka.expense_tracker.bean.ExpenseBuilder;
-import com.nhuszka.expense_tracker.bean.ExpenseType;
-import com.nhuszka.expense_tracker.repository.FakeExpenseRepository;
+import com.nhuszka.expense_tracker.backend.bean.Expense;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseBuilder;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseType;
+import com.nhuszka.expense_tracker.backend.repository.FakeExpenseRepository;
+import com.nhuszka.expense_tracker.backend.service.ExpenseService;
 
 public class ExpenseServiceTest {
 

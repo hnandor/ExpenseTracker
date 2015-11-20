@@ -1,13 +1,13 @@
-package com.nhuszka.expense_tracker.service;
+package com.nhuszka.expense_tracker.backend.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nhuszka.expense_tracker.bean.Expense;
-import com.nhuszka.expense_tracker.bean.ExpenseBuilder;
-import com.nhuszka.expense_tracker.repository.ExpenseRepository;
+import com.nhuszka.expense_tracker.backend.bean.Expense;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseBuilder;
+import com.nhuszka.expense_tracker.backend.repository.ExpenseRepository;
 
 @Service
 class ExpenseService<R extends ExpenseRepository> {

@@ -1,4 +1,4 @@
-package com.nhuszka.expense_tracker.service;
+package com.nhuszka.expense_tracker.backend.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -11,9 +11,10 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.nhuszka.expense_tracker.bean.ExpenseType;
-import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
-import com.nhuszka.expense_tracker.repository.FakeExpenseTypeRepository;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseType;
+import com.nhuszka.expense_tracker.backend.bean.ExpenseTypeBuilder;
+import com.nhuszka.expense_tracker.backend.repository.FakeExpenseTypeRepository;
+import com.nhuszka.expense_tracker.backend.service.ExpenseTypeService;
 
 public class ExpenseTypeServiceTest {
 
