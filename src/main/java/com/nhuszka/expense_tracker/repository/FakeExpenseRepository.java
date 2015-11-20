@@ -45,4 +45,10 @@ public class FakeExpenseRepository implements ExpenseRepository {
 	private BigDecimal getFakeAmount() {
 		return BigDecimal.ONE.add(new BigDecimal(expenses.size()));
 	}
+
+	public Expense addExpense(Expense expense) {
+		expenses = listExpense();
+		expenses.add(expense);
+		return expense;
+	}
 }

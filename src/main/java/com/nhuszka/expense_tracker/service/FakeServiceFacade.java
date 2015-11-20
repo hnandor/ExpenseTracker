@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.nhuszka.expense_tracker.bean.Expense;
+import com.nhuszka.expense_tracker.bean.ExpenseBuilder;
 import com.nhuszka.expense_tracker.bean.ExpenseType;
+import com.nhuszka.expense_tracker.bean.ExpenseTypeBuilder;
 import com.nhuszka.expense_tracker.repository.FakeExpenseRepository;
 import com.nhuszka.expense_tracker.repository.FakeExpenseTypeRepository;
 
@@ -28,7 +30,17 @@ public class FakeServiceFacade implements ServiceFacade {
 	}
 
 	@Override
+	public Expense addExpense(ExpenseBuilder expenseBuilder) {
+		return expenseService.addExpense(expenseBuilder);
+	}
+
+	@Override
 	public List<ExpenseType> listExpenseType() {
 		return expenseTypeService.listExpenseType();
+	}
+
+	@Override
+	public ExpenseType addExpenseType(ExpenseTypeBuilder expenseTypeBuilder) {
+		return expenseTypeService.addExpenseType(expenseTypeBuilder);
 	}
 }

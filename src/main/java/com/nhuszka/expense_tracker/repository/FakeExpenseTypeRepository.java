@@ -24,20 +24,30 @@ public class FakeExpenseTypeRepository implements ExpenseTypeRepository {
 	}
 
 	public List<ExpenseType> listExpenseType() {
-		return Optional.ofNullable(expenseTypes).orElse(createExpenseTypes());
+		return Optional.ofNullable(expenseTypes).orElse(createFakeExpenseTypes());
 	}
 
-	private List<ExpenseType> createExpenseTypes() {
+	private List<ExpenseType> createFakeExpenseTypes() {
 		expenseTypes = new ArrayList<ExpenseType>();
 		Arrays.asList(FakeType.values()).forEach((type) -> {
-			expenseTypes.add(createExpenseType(type));
+			expenseTypes.add(createFakeExpenseType(type));
 		});
 		return expenseTypes;
 	}
 
-	private ExpenseType createExpenseType(final FakeType fakeType) {
+	private ExpenseType createFakeExpenseType(final FakeType fakeType) {
+		return createExpenseType(PREFIX + fakeType.name());
+	}
+
+	private ExpenseType createExpenseType(String type) {
 		return new ExpenseTypeBuilder()
-				.withType(PREFIX + fakeType.name())
+				.withType(type)
 				.build();
+	}
+
+	public ExpenseType addExpenseType(ExpenseType expenseType) {
+		expenseTypes = listExpenseType();
+		expenseTypes.add(expenseType);
+		return expenseType;
 	}
 }

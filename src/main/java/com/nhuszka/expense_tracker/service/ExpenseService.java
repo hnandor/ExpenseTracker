@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nhuszka.expense_tracker.bean.Expense;
+import com.nhuszka.expense_tracker.bean.ExpenseBuilder;
 import com.nhuszka.expense_tracker.repository.ExpenseRepository;
 
 @Service
@@ -20,5 +21,10 @@ class ExpenseService<R extends ExpenseRepository> {
 
 	List<Expense> listExpense() {
 		return expenseRepository.listExpense();
+	}
+
+	Expense addExpense(ExpenseBuilder expenseBuilder) {
+		Expense expense = expenseBuilder.build();
+		return expenseRepository.addExpense(expense);
 	}
 }
