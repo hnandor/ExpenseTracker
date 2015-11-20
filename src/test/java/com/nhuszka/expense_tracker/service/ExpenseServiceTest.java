@@ -1,7 +1,6 @@
 package com.nhuszka.expense_tracker.service;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -20,29 +19,25 @@ import com.nhuszka.expense_tracker.repository.FakeExpenseRepository;
 public class ExpenseServiceTest {
 
 	private FakeExpenseRepository expenseRepository;
+	private ExpenseService<FakeExpenseRepository> expenseService;
 
 	@Before
 	public void initBeforeTest() {
 		expenseRepository = mock(FakeExpenseRepository.class);
+		expenseService = new ExpenseService<FakeExpenseRepository>(expenseRepository);
 	}
 
 	@Test
-	public void test01_ExpenseServiceIsSuccessfullyMocked() {
-		ExpenseService<FakeExpenseRepository> service = getExpenseService();
-		assertNotNull(service);
+	public void test01_ExpenseServiceListExpense() {
+		final List<Expense> expenseList = givenAnExpenseList();
+
+		assertEquals(expenseList, expenseService.listExpense());
 	}
 
-	private ExpenseService<FakeExpenseRepository> getExpenseService() {
-		return new ExpenseService<FakeExpenseRepository>(expenseRepository);
-	}
-
-	@Test
-	public void test02_ExpenseServiceUsesTheProperRepository() {
+	private List<Expense> givenAnExpenseList() {
 		final List<Expense> expenseList = createExpenseList();
-
 		when(expenseRepository.listExpense()).thenReturn(expenseList);
-
-		assertEquals(expenseList, getExpenseService().listExpense());
+		return expenseList;
 	}
 
 	private List<Expense> createExpenseList() {
